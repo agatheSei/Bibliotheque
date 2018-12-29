@@ -1,0 +1,75 @@
+﻿@using BibliothekV1.Application.ViewModel;
+@model UserViewModel
+Hello!!
+@using (Html.BeginForm("CreateAnAccount", "User", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>First Name*: </td>
+            <td>
+                @Html.TextBoxFor(m => m.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name*: </td>
+            <td>
+                @Html.TextBoxFor(m => m.LastName)
+            </td>
+        </tr>
+        <tr>
+            <td>Pseudo*: </td>
+            <td>
+                @Html.TextBoxFor(m => m.Pseudo)
+            </td>
+        </tr>
+        <tr>
+            <td>Birth Date*: </td>
+            <td>
+                @Html.TextBoxFor(m => m.BirthDate)
+            </td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>
+                <input type="text" id="autocomplete" />
+            </td>
+        </tr>
+        <tr>
+            <td>Email*: </td>
+            <td>
+                @Html.TextBoxFor(m => m.Email)
+            </td>
+        </tr>
+        <tr>
+            <td>Password*: </td>
+            <td>
+                @Html.TextBoxFor(m => m.Password)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+}
+
+
+
+Bye bye world
+
+
+
+@section Scripts{
+    <script src="~/js/Common/jquery.validate.js"></script>
+    <script src="~/js/Common/jquery.validate.unobtrusive.js"></script>
+    <script src="~/js/Common/additional-methods.js"></script>
+    <script src="~/js/Common/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLYwN6MZsCYHq1e2h-uosLmJUPB48Nxkk&libraries=places&callback=initAutocomplete"
+            async defer></script>
+}
+    <script>
+        function initAutocomplete() {
+            var input = document.getElementById('autocomplete');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+    </script>
